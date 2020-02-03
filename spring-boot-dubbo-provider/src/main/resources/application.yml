@@ -1,0 +1,27 @@
+dubbo:
+  #  registry:
+  #    address: zookeeper://10.255.242.215:2181
+  #    group: /dubbo/outapi
+  #    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+  #  config-center:
+  #    address: http://10.255.242.227:8080
+  #    namespaces: application
+  #    highest-priority: false
+  #  protocol:
+  #    name: dubbo
+  #    port: 12345
+  application:
+    name: dubbo-provider
+  registry:
+    address: localhost:2181
+    group: /dubbo/local
+    simplified: true
+  provider:
+    protocols:
+      - name: rest
+        port: 9111
+        threads: 100
+      - name: dubbo
+        port: 9112
+    retries: 0
+    dynamic: true
