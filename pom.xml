@@ -24,6 +24,7 @@
         <module>spring-boot-jpa</module>
         <module>spring-boot-dubbo-provider</module>
         <module>spring-boot-dubbo-service</module>
+        <module>spring-boot-dubbo-consumer</module>
     </modules>
 
     <dependencyManagement>
