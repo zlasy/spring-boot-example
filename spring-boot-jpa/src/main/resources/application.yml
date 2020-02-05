@@ -9,5 +9,5 @@ spring:
     properties:
       hibernate:
         hbm2ddl:
-          auto: update
+          auto: create
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
