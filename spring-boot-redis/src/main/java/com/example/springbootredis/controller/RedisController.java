@@ -69,7 +69,7 @@ public class RedisController {
         return "ok";
     }
 
-    @RequestMapping("room")
+    @RequestMapping("roomScan")
     String scan(){
         Set<String> keys = scan("roomIdMapperSessionId:");
         for (String key : keys) {
