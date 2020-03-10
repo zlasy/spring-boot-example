@@ -21,7 +21,7 @@ public class KfSession {
         try{
             StringBuilder tmpcookies = new StringBuilder();
             DecimalFormat df=new DecimalFormat("000");
-            for (int i = 1; i <= 10; i++) {
+            for (int i = 1; i <= 100; i++) {
                 String name = "test" + df.format(i);
                 tmpcookies.append(name).append("\t").append(invokeOnce(name)).append("\r\n");
             }

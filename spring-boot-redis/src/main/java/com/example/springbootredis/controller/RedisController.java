@@ -47,17 +47,38 @@ public class RedisController {
         return session.getId();
     }
 
+    @RequestMapping("userScan")
+    String userScan(){
+        Set<String> keys = scan("userIdMapperConnIds:1:");
+        for (String key : keys) {
+//            redisTemplate.delete(key);
+            Set<Long> valueSet = redisTemplate.opsForSet().members(key);
+            boolean hasValue = false;
+            for (Long value : valueSet) {
+                if (redisTemplate.hasKey("connectionId:1:" + value)){
+                    System.out.println("存在" + key + "|" + value);
+                    hasValue = true;
+                } else {
+                    System.out.println("不存在" + key + "|" + value);
+                }
+            }
+            if (!hasValue){
+                redisTemplate.delete(key);
+            }
+        }
+        return "ok";
+    }
 
-    @RequestMapping("scan")
+    @RequestMapping("room")
     String scan(){
         Set<String> keys = scan("roomIdMapperSessionId:");
         for (String key : keys) {
-//            redisTemplate.delete(key);
             String value =  Long.toString((Long) redisTemplate.opsForValue().get(key));
             if (redisTemplate.hasKey("redisSessionInfo:1:" + value)){
                 System.out.println("存在" + key + "|" + value);
             } else {
                 System.out.println("不存在" + key + "|" + value);
+                redisTemplate.delete(key);
             }
 //            System.out.println("delete " + key);
         }
@@ -67,7 +88,7 @@ public class RedisController {
     public Set<String> scan(String matchKey) {
         Set<String> keys = (Set<String>) redisTemplate.execute((RedisCallback<Set<String>>) connection -> {
             Set<String> keysTmp = new HashSet<>();
-            Cursor<byte[]> cursor = connection.scan(new ScanOptions.ScanOptionsBuilder().match(matchKey + "*").count(10).build());
+            Cursor<byte[]> cursor = connection.scan(new ScanOptions.ScanOptionsBuilder().match(matchKey + "*").count(100).build());
             while (cursor.hasNext()) {
                 keysTmp.add(new String(cursor.next()));
             }

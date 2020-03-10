@@ -16,9 +16,9 @@ public class OnlineTimeTool {
     }
 
     private static void printTime() {
-        String filename = "D:\\2.txt";
+        String filename = "D:\\1.txt";
         String outFile = "D:\\out.txt";
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy/M/d HH:mm:ss");
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Map<Long, StatisticResult> resultMap = new HashMap<>();
         try {
             InputStreamReader in = new InputStreamReader(new FileInputStream(filename), StandardCharsets.UTF_8);
@@ -59,9 +59,9 @@ public class OnlineTimeTool {
     private static void calculate(Map<Long, StatisticResult> resultMap) throws ParseException {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Calendar start = Calendar.getInstance();
-        start.setTime(sdf.parse("2020-02-01 09:00:00"));
+        start.setTime(sdf.parse("2020-03-01 09:00:00"));
         Calendar end = Calendar.getInstance();
-        end.setTime(sdf.parse("2020-02-01 21:30:00"));
+        end.setTime(sdf.parse("2020-03-01 21:30:00"));
         for (StatisticResult result : resultMap.values()) {
             Map<String, TimeReport> map = result.getMap();
             for (JournalLog log : result.getList()) {
