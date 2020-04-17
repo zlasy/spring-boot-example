@@ -69,7 +69,6 @@ public class GlobalExceptionHandler {
         return new ApiResult(DUPLICATE_KEY_CODE, "数据重复，请检查后提交");
     }
 
-
     @ExceptionHandler(Exception.class)
     public ApiResult handleException(Exception e) {
         logger.error(e.getMessage(), e);

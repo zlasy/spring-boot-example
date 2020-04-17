@@ -25,3 +25,5 @@ dubbo:
         port: 9112
     retries: 0
     dynamic: true
+  protocol:
+    accesslog: true

@@ -1,0 +1,2 @@
+exceptionFilter=com.example.dubbo.provider.filter.DubboExceptionFilter
+validationFilter=com.example.dubbo.provider.filter.DubboValidationFilter
