@@ -1,11 +1,13 @@
 package com.example.dubbo.provider.service;
 
+import com.example.dubbo.result.dto.UserDTO;
 import com.example.dubbo.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
@@ -21,5 +23,13 @@ public class DemoServiceImpl implements DemoService {
     public String test(@PathParam("str") String str) {
         log.info(str);
         return str;
+    }
+
+    @POST
+    @Path("/createUser")
+    @Override
+    public String createUser(UserDTO user) {
+        log.info(user.toString());
+        return "true";
     }
 }

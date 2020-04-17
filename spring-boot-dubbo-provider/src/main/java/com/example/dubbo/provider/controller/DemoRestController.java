@@ -1,11 +1,11 @@
 package com.example.dubbo.provider.controller;
 
 import com.example.dubbo.result.ApiResult;
+import com.example.dubbo.result.dto.UserDTO;
 import com.example.dubbo.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class DemoRestController {
@@ -19,4 +19,10 @@ public class DemoRestController {
                 .data(demoService.test(str)).build();
     }
 
+
+    @PostMapping("/test/createUser")
+    public ApiResult<?> getTestString(@RequestBody @Validated UserDTO user){
+        return ApiResult.builder().code("0").success(true).message("success")
+                .data(user).build();
+    }
 }
