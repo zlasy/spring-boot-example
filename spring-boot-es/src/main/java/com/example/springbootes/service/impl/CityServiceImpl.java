@@ -21,31 +21,37 @@ public class CityServiceImpl implements CityService {
     private static final Integer pageSize = 10;
     Pageable pageable = new PageRequest(pageNumber, pageSize);
 
-    // ES 操作类
+    /** ES 操作类 */
     @Autowired
     CityRepository cityRepository;
 
+    @Override
     public Long saveCity(City city) {
         City cityResult = cityRepository.save(city);
         return cityResult.getId();
     }
 
+    @Override
     public List<City> findByDescriptionAndScore(String description, Integer score) {
         return cityRepository.findByDescriptionAndScore(description, score);
     }
 
+    @Override
     public List<City> findByDescriptionOrScore(String description, Integer score) {
         return cityRepository.findByDescriptionOrScore(description, score);
     }
 
+    @Override
     public List<City> findByDescription(String description) {
         return cityRepository.findByDescription(description, pageable).getContent();
     }
 
+    @Override
     public List<City> findByDescriptionNot(String description) {
         return cityRepository.findByDescriptionNot(description, pageable).getContent();
     }
 
+    @Override
     public List<City> findByDescriptionLike(String description) {
         return cityRepository.findByDescriptionLike(description, pageable).getContent();
     }
