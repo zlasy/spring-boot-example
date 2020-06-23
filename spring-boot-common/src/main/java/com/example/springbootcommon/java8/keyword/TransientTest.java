@@ -1,4 +1,4 @@
-package com.example.springbootcommon.java8;
+package com.example.springbootcommon.java8.keyword;
 
 import java.io.*;
 
