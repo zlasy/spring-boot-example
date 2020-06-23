@@ -31,11 +31,7 @@ public class TransientTest implements Serializable {
             inStream = new ObjectInputStream(new FileInputStream(filePath));
             TransientTest readObject = (TransientTest)inStream.readObject();
             System.out.println("序列化后："+readObject.toString());
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

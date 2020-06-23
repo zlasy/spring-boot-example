@@ -33,7 +33,7 @@ public class ReentrantLockTest {
                 arrayList.add(i);
             }
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }finally {
             lock.unlock();
             System.out.println(thread.getName()+"释放了锁");
