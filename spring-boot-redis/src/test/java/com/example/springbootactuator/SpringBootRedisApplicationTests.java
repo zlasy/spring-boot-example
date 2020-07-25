@@ -1,7 +1,7 @@
-package com.example.springbootredis;
+package com.example.springbootactuator;
 
-import com.example.springbootredis.controller.RedisController;
-import com.example.springbootredis.vo.User;
+import com.example.springbootactuator.controller.RedisController;
+import com.example.springbootactuator.vo.User;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

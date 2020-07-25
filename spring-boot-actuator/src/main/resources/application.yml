@@ -1,0 +1,16 @@
+# 开放健康检查接口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  metrics:
+    enable:
+      jvm: true
+      http: false
+      tomcat: false
+      process: false
+      system: false

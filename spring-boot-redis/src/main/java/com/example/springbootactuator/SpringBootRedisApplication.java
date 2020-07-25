@@ -1,4 +1,4 @@
-package com.example.springbootredis;
+package com.example.springbootactuator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,6 @@ import org.springframework.util.StringUtils;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Collections;
 import java.util.Enumeration;
 import java.util.Map;
 import java.util.Properties;

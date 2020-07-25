@@ -1,4 +1,4 @@
-package com.example.springbootredis.vo;
+package com.example.springbootactuator.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

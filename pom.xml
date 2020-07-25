@@ -27,7 +27,7 @@
         <module>spring-boot-dubbo-consumer</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-es</module>
-        <module>spring-boot-nlp</module>
+        <module>spring-boot-actuator</module>
         <module>spring-boot-common</module>
     </modules>
 

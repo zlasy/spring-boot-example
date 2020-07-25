@@ -1,4 +1,4 @@
-package com.example.springbootredis.config;
+package com.example.springbootactuator.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
