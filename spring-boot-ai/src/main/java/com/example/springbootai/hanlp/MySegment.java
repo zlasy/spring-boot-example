@@ -17,12 +17,12 @@ import java.util.stream.Collectors;
 public class MySegment {
 
     public static void main(String[] args) {
-//        test();
-        try {
-            segment();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        test();
+//        try {
+////            segment();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     private static void test() {

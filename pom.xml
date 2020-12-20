@@ -29,7 +29,9 @@
         <module>spring-boot-mybatis</module>
         <module>spring-boot-es</module>
         <module>spring-boot-actuator</module>
+        <module>spring-boot-ai</module>
         <module>spring-boot-common</module>
+        <module>spring-boot-elastic-job</module>
     </modules>
 
     <dependencyManagement>
