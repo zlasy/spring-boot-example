@@ -23,12 +23,12 @@ public class RedisController {
     @Autowired
     RedisTemplate redisTemplate;
 
-    @RequestMapping("/getStr/{key}")
+    @GetMapping("/getStr/{key}")
     public String getStr(@PathVariable String key) {
         return key;
     }
 
-    @RequestMapping("/getUser")
+    @GetMapping("/getUser")
     @Cacheable(cacheNames="user")
     public User getUser(String name) {
         User user=new User(name, 456L, 18, "aa123");
