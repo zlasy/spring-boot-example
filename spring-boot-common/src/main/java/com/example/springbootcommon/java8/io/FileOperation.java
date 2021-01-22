@@ -15,7 +15,7 @@ public class FileOperation {
 
     private static void readFileNames() {
         try {
-            String path = "D:\\code\\order";		//要遍历的路径
+            String path = "D:\\code\\ost";		//要遍历的路径
             traverseFolderByContent(path, "xml", "product_id");
         } catch (IOException e) {
             e.printStackTrace();

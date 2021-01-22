@@ -13,8 +13,8 @@ import org.apache.commons.httpclient.methods.RequestEntity;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
 import org.apache.commons.httpclient.params.HttpMethodParams;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -22,7 +22,7 @@ public class InvokeApi {
 
     public static void main(String[] args) throws UnsupportedEncodingException {
 
-        kfoffline();
+        callFromFile();
 //        closeSessionByRoom();
 //        printBytes();
     }
@@ -144,5 +144,30 @@ public class InvokeApi {
         } finally {
             method.releaseConnection();
         }
+    }
+
+
+    public static void callFromFile(){
+        String url = "http://10.0.2.45:8128/stock/passdownReply.json";
+        String filename = "D:\\1.txt";
+        try {
+            InputStreamReader in = new InputStreamReader(new FileInputStream(filename), StandardCharsets.UTF_8);
+            BufferedReader br=new BufferedReader(in);
+            String temp=br.readLine();
+            while(temp!=null){
+                HttpClient client = new HttpClient();
+                PostMethod method = new PostMethod(url);
+                RequestEntity se = new StringRequestEntity(temp ,"application/json" ,"UTF-8");
+                method.setRequestEntity(se);
+                method.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, "UTF-8");
+                client.executeMethod(method);
+                System.out.println(method.getResponseBodyAsString());
+
+                temp=br.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

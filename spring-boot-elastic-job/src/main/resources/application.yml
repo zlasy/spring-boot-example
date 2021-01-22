@@ -12,17 +12,17 @@ elasticjob:
   jobs:
     simpleJob:
       elasticJobClass: com.example.springbootelasticjob.job.SpringBootSimpleJob
-      cron: 0/5 * * * * ?
+      cron: 0/10 * * * * ?
       shardingTotalCount: 3
       shardingItemParameters: 0=Beijing,1=Shanghai,2=Guangzhou
     dataflowJob:
       elasticJobClass: com.example.springbootelasticjob.job.SpringBootDataflowJob
-      cron: 0/5 * * * * ?
+      cron: 5/10 * * * * ?
       shardingTotalCount: 3
       shardingItemParameters: 0=Beijing,1=Shanghai,2=Guangzhou
     scriptJob:
       elasticJobType: SCRIPT
-      cron: 0/10 * * * * ?
+      cron: 0/30 * * * * ?
       shardingTotalCount: 3
       props:
         script.command.line: "echo SCRIPT Job: "
@@ -34,6 +34,7 @@ elasticjob:
 #        script.command.line: "echo Manual SCRIPT Job: "
     occurErrorNoticeWechatJob:
       elasticJobClass: com.example.springbootelasticjob.job.SpringBootOccurErrorNoticeWechatJob
+      cron: 0/5 * * * * ?
       overwrite: true
       shardingTotalCount: 3
       shardingItemParameters: 0=Beijing,1=Shanghai,2=Guangzhou

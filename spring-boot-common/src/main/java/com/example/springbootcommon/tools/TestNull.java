@@ -12,6 +12,8 @@ public class TestNull {
 
     public static void main(String[] args) {
         try {
+            float f = 0.00f;
+            System.out.println(f == 0.0f);
             Integer a = -3;
             Optional<Integer> t = Optional.ofNullable(a);
             t.ifPresent(x -> System.out.println(x.equals(1)));
