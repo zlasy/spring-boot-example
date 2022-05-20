@@ -32,6 +32,7 @@
         <module>spring-boot-ai</module>
         <module>spring-boot-common</module>
         <module>spring-boot-elastic-job</module>
+        <module>spring-boot-architecture</module>
     </modules>
 
     <dependencyManagement>

@@ -30,7 +30,7 @@ public class MySegment {
         String path = System.getProperty("user.dir") + "/" + "data/dictionary/custom/CustomDictionary.txt;" +
             System.getProperty("user.dir") + "/" + "data/dictionary/custom/MyDictionary.txt";
         path = path.replace("\\", "/");
-        String text = "当当银铃铛的发放规则是什么样的";
+        String text = "新东方教材的发放规则是什么样的";
         Segment segment = HanLP.newSegment().enableCustomDictionary(false);
         Segment seg = new ViterbiSegment(path);
         System.out.println("不启用字典的分词结果：" + segment.seg(text));
