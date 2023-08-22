@@ -16,7 +16,7 @@ public class OneFilter implements AuditFilter{
 
     @Override
     public FilterResult doFilter(Invoker<?> invoker, AuditFilterContext filterContext) {
-        System.out.println("filter1");
+        System.out.println("filter1: " + filterContext.getDeliverInfo().getDeliverCode());
         return invoker.invoke(filterContext);
     }
 }

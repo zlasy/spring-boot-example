@@ -24,10 +24,11 @@ public class BaseTest {
     public void query(){
         Map<String, FilterChainBuilder> map = ApplicationContextHolder.getBeansOfType(FilterChainBuilder.class);
         for (Map.Entry<String, FilterChainBuilder> entry : map.entrySet()) {
-            Invoker invoker = entry.getValue().buildFilterChain();
+            DeliverInfo d1 = DeliverInfo.mock1();
+            Invoker<Object> invoker = entry.getValue().buildFilterChain();
             if (invoker != null) {
                 AuditFilterContext filterContext = new AuditFilterContext();
-                filterContext.setDeliverInfo(new DeliverInfo());
+                filterContext.setDeliverInfo(d1);
                 invoker.invoke(filterContext);
             }
         }

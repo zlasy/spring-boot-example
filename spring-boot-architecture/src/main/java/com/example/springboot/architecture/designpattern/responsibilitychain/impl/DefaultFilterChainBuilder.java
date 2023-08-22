@@ -24,6 +24,7 @@ public class DefaultFilterChainBuilder implements FilterChainBuilder {
         List<AuditFilter> filters = new ArrayList<>();
         Map<String, AuditFilter> map = ApplicationContextHolder.getBeansOfType(AuditFilter.class);
         filters.addAll(map.values());
+        System.out.println(filters);
         filters = sortingAndDeduplication(filters);
         System.out.println(filters);
 

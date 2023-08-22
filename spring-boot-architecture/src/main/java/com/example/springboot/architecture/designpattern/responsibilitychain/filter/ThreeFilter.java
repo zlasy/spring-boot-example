@@ -15,7 +15,7 @@ public class ThreeFilter implements AuditFilter{
 
     @Override
     public FilterResult doFilter(Invoker<?> invoker, AuditFilterContext filterContext) {
-        System.out.println("filter3");
+        System.out.println("filter3: " + filterContext.getDeliverInfo().getDeliverCode());
         if (invoker == null) {
             return FilterResult.success();
         }

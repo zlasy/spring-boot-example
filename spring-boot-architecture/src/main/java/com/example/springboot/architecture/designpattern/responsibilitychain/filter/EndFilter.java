@@ -15,7 +15,7 @@ public class EndFilter implements AuditFilter{
 
     @Override
     public FilterResult doFilter(Invoker<?> invoker, AuditFilterContext filterContext) {
-        System.out.println("filter-end");
+        System.out.println("filter-end: " + filterContext.getDeliverInfo().getDeliverCode());
         if (invoker == null) {
             return FilterResult.success();
         }

@@ -15,7 +15,7 @@ public class TwoFilter implements AuditFilter{
 
     @Override
     public FilterResult doFilter(Invoker<?> invoker, AuditFilterContext filterContext) {
-        System.out.println("filter2");
+        System.out.println("filter2: " + filterContext.getDeliverInfo().getDeliverCode());
         return invoker.invoke(filterContext);
     }
 }
