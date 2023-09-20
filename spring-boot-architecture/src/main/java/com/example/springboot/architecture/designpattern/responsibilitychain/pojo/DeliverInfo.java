@@ -30,6 +30,17 @@ public class DeliverInfo {
         return deliverInfo;
     }
 
+    public static DeliverInfo mock(Integer i){
+        DeliverInfo deliverInfo = new DeliverInfo();
+        deliverInfo.setId(1L);
+        deliverInfo.setSchoolId(1);
+        deliverInfo.setDeliverCode("TBD00000" + i);
+        deliverInfo.setStudentCode("Stu000" + i);
+        deliverInfo.setSaleType(1);
+        deliverInfo.setIsFail(false);
+        return deliverInfo;
+    }
+
     @Override
     public String toString(){
         return "DeliverInfo{" +

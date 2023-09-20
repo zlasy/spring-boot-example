@@ -5,17 +5,17 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class FilterResult {
+public class InvokeResult {
 
     Integer code;
 
     String errorMsg = "";
 
-    public static FilterResult success() {
-        return new FilterResult(0, "");
+    public static InvokeResult success() {
+        return new InvokeResult(0, "");
     }
 
-    public static FilterResult fail(Integer code, String errorMsg){
-        return new FilterResult(code, errorMsg);
+    public static InvokeResult fail(Integer code, String errorMsg){
+        return new InvokeResult(code, errorMsg);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.springbootactuator;
+package com.example.redis;
 
 import com.spring4all.swagger.EnableSwagger2Doc;
 import org.springframework.boot.SpringApplication;

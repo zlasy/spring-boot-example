@@ -1,6 +1,6 @@
-package com.example.springbootactuator.controller;
+package com.example.redis.controller;
 
-import com.example.springbootactuator.vo.User;
+import com.example.redis.vo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.Cursor;

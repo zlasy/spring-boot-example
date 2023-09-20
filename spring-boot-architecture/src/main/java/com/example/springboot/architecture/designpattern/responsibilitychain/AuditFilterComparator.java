@@ -1,12 +1,12 @@
 package com.example.springboot.architecture.designpattern.responsibilitychain;
 
-import lombok.Data;
 import org.springframework.core.annotation.Order;
 
 import java.util.Comparator;
 
 public class AuditFilterComparator implements Comparator<Class<?>> {
 
+    @SuppressWarnings({"unchecked" })
     @Override
     public int compare(Class o1, Class o2) {
         int i1 = 2147483647;

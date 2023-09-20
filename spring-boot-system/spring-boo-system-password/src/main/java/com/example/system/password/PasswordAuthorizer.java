@@ -1,0 +1,13 @@
+package com.example.system.password;
+
+import com.example.system.authorize.LoginAuthorizer;
+import com.example.system.authorize.pojo.LoginAuthorization;
+import com.example.system.user.User;
+
+public class PasswordAuthorizer implements LoginAuthorizer {
+
+    @Override
+    public LoginAuthorization authorize(User user) {
+        return null;
+    }
+}
