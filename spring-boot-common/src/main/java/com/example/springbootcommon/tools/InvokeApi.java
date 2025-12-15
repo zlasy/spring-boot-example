@@ -51,22 +51,6 @@ public class InvokeApi {
         }
     }
 
-    public static void getFile(){
-        String url = "";
-        String filename = "/Users/zhangle/Documents/1.txt";
-        try {
-            InputStreamReader in = new InputStreamReader(new FileInputStream(filename), StandardCharsets.UTF_8);
-            BufferedReader br=new BufferedReader(in);
-            String temp=br.readLine();
-            while(temp!=null){
-                getMethod(url, temp);
-                temp=br.readLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public static void getMethod() {
         final String URL = "";
         final String ids = "11053172,11053173,11053175,11053176,11058432,11058747,11058748,11058750,11058752,11058753,11058754,11061651,11065768,11067895,11067899,11068849,11068957,11068958,11068959,11068960,11068961,11068962,11069528,11070161,11081081,11081830,11084415,11084417,11099504,11099505,11099506,11099538,11099539,11099540,11099541,11099542,11099844,11099850,11099851,11099852,11099857,11099863,11099864,11100634,11100986,11100987,11102835,11102993,11102996,11104146,11104652,11104692,11105228,11105230,11105538,11106489,11111232,11111502,11112729,11112735,11112893,11112894,11112895,11112896,11112897,11113590,11113848,11114426,11550634";
@@ -116,32 +100,6 @@ public class InvokeApi {
                 client.executeMethod(method);
                 System.out.println(s);
                 System.out.println(method.getResponseBodyAsString());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    public static void callFromFile(){
-
-        String url = "";
-        String filename = "/Users/zhangle/Documents/1.txt";
-        try {
-            InputStreamReader in = new InputStreamReader(new FileInputStream(filename), StandardCharsets.UTF_8);
-            BufferedReader br=new BufferedReader(in);
-            String temp=br.readLine();
-            while(temp!=null){
-                HttpClient client = new HttpClient();
-                PostMethod method = new PostMethod(url);
-                RequestEntity se = new StringRequestEntity(temp ,"application/json" ,"UTF-8");
-                method.setRequestEntity(se);
-                method.getParams().setParameter(HttpMethodParams.HTTP_CONTENT_CHARSET, "UTF-8");
-                client.executeMethod(method);
-//                System.out.println(temp);
-                System.out.println(temp + "\t" + method.getResponseBodyAsString());
-
-                temp=br.readLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
